@@ -1,16 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'; 
-import Card from './components/Card';
-import CardList from './components/CardList';
-import 'tachyons';
-import registerServiceWorker from './registerServiceWorker';
-import { robots } from './robots';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "tachyons";
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
+import { createRoot } from "react-dom/client";
 
-
-
-ReactDOM.render(    
-    <CardList robots={robots}/>
-, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+root.render(<App />);
 
 registerServiceWorker();
