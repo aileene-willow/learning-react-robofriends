@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import CardList from "./components/CardList";
-import { robots } from "./robots";
-import SearchBox from "./components/Searchbox";
+import CardList from "../components/CardList";
+import Searchbox from "../components/Searchbox";
 import "./Apps.css";
 
 class App extends Component {
@@ -22,8 +21,8 @@ class App extends Component {
   };
 
   render() {
-    const filteredRobots = this.state.robots.filter((robots) => {
-      return robots.name
+    const filteredRobots = this.state.robots.filter((robot) => {
+      return robot.name
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
@@ -33,7 +32,7 @@ class App extends Component {
       return (
         <div className="main">
           <h1> Robofriends </h1>
-          <SearchBox searchChange={this.onSearchChange} />
+          <Searchbox searchChange={this.onSearchChange} />
           <CardList robots={filteredRobots} />
         </div>
       );
