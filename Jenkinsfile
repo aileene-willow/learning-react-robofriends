@@ -1,14 +1,13 @@
 pipeline {
     agent any
-
     stages {
         stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
             steps {
+                // Clean dependencies
+                sh 'rm -rf node_modules package-lock.json'
+                sh 'npm cache clean --force'
+                
+                // Fresh install
                 sh 'npm install'
                 sh 'npm run build'
             }
