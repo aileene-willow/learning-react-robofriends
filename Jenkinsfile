@@ -22,8 +22,8 @@ pipeline {
                     # Copy built React files to nginx web directory
                     sudo cp -r build/* /var/www/html/robofriends/
                     
-                    # Set proper permissions for nginx
-                    sudo chown -R nginx:nginx /var/www/html/robofriends
+                    # Set proper permissions for nginx (Ubuntu uses www-data)
+                    sudo chown -R www-data:www-data /var/www/html/robofriends
                     sudo chmod -R 755 /var/www/html/robofriends
                     
                     # Reload nginx to pick up changes
