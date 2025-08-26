@@ -1,5 +1,5 @@
 # robofriends and jenkins friends
-Tutorial for React
+Tutorial for React and Jenkins
 To run the project: 
 
 1. Clone this repo
