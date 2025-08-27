@@ -17,14 +17,14 @@ pipeline {
                 // Deploy to nginx web directory
                 sh '''
                     # Create directory for the React app
-                    sudo mkdir -p /var/www/html/robofriends
+                    sudo mkdir -p /usr/share/nginx/html/robofriends
                     
                     # Copy built React files to nginx web directory
-                    sudo cp -r build/* /var/www/html/robofriends/
+                    sudo cp -r build/* /usr/share/nginx/html/robofriends/
                     
                     # Set proper permissions for nginx (Amazon Linux uses nginx user)
-                    sudo chown -R nginx:nginx /var/www/html/robofriends
-                    sudo chmod -R 755 /var/www/html/robofriends
+                    sudo chown -R nginx:nginx /usr/share/nginx/html/robofriends
+                    sudo chmod -R 755 /usr/share/nginx/html/robofriends
                     
                     # Reload nginx to pick up changes
                     sudo systemctl reload nginx
