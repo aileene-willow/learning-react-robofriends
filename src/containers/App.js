@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CardList from "../components/CardList.js";
-import SearchBox from "../components/Searchbox.js";
+import Searchbox from "../components/Searchbox.js";
 import "./Apps.css";
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
       return (
         <div className="main">
           <h1> Robofriends </h1>
-          <SearchBox searchChange={this.onSearchChange} />
+          <Searchbox searchChange={this.onSearchChange} />
           <CardList robots={filteredRobots} />
         </div>
       );
