@@ -8,6 +8,7 @@ pipeline {
                 sh 'npm cache clean --force'
                 
                 // Fresh install and build
+                sh 'npm install'
                 sh 'npm run build'
             }
         }
